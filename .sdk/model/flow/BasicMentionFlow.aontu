@@ -1,0 +1,22 @@
+# BasicMentionFlow
+
+main: kit: flow: BasicMentionFlow:
+{
+  entity: "mention",
+  kind: "basic",
+  name: "BasicMentionFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "mention_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMentionFlow"
+}

@@ -1,0 +1,169 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Gubanov Files API",
+    "description": "Unofficial JSON endpoints behind gubanovfiles.com (\"Files of Gubanov\"), a database of bloggers and outlets that published promotional material about the 'SEZ PPT Alabuga' project. Knowledge comes from the community Swift client https://github.com/l0v3m0n3y/gubanovfiles (src/gubanovfiles.swift lists the three routes) and from live GET probes on 2026-10-23; the site publishes no documentation of its own. Response shapes are taken from those probes. Unverified: `/statuses` returned an empty object, so its contents are unknown; no pagination or query parameters were observed on any route. No key is needed.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/gubanovfiles"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://gubanovfiles.com/api",
+      "description": "Gubanov Files production server"
+    }
+  ],
+  "paths": {
+    "/mentions": {
+      "get": {
+        "summary": "List project mentions",
+        "description": "Returns every recorded mention (23 on 2026-10-23), each with Russian, English and Ukrainian text.",
+        "operationId": "listMentions",
+        "responses": {
+          "200": {
+            "description": "All mentions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Mention"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tg-avatars": {
+      "get": {
+        "summary": "Get Telegram channel avatars",
+        "description": "Returns a single object mapping Telegram handles to avatar image URLs. The response is large (~3.3 MB).",
+        "operationId": "getTgAvatar",
+        "responses": {
+          "200": {
+            "description": "Avatar URL map",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Avatar"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/statuses": {
+      "get": {
+        "summary": "Get statuses",
+        "description": "Returns a statuses object. Observed as `{}` on 2026-10-23.",
+        "operationId": "getStatus",
+        "responses": {
+          "200": {
+            "description": "Statuses object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Mention": {
+        "type": "object",
+        "description": "A recorded mention of the Alabuga SEZ project by a blogger or outlet.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Mention id, e.g. `item-makashenets-2026` or a random 20-character id."
+          },
+          "sourceUrl": {
+            "type": "string",
+            "description": "Link to the original material (YouTube video, Telegram post, article)."
+          },
+          "sourceName": {
+            "type": "string",
+            "description": "Name of the blogger or outlet (Russian)."
+          },
+          "title": {
+            "type": "string",
+            "description": "Title in the original language (usually Russian)."
+          },
+          "content": {
+            "type": "string",
+            "description": "Summary text in the original language."
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Publication date, ISO 8601 at midnight UTC, e.g. `2026-07-17T00:00:00Z`."
+          },
+          "dateFormatted": {
+            "type": "string",
+            "description": "The same date as `DD.MM.YYYY`."
+          },
+          "title_en": {
+            "type": "string",
+            "description": "English title."
+          },
+          "title_ua": {
+            "type": "string",
+            "description": "Ukrainian title."
+          },
+          "title_ru": {
+            "type": "string",
+            "description": "Russian title. Present on only some mentions (6 of 23 on 2026-10-23)."
+          },
+          "content_en": {
+            "type": "string",
+            "description": "English summary."
+          },
+          "content_ua": {
+            "type": "string",
+            "description": "Ukrainian summary."
+          },
+          "content_ru": {
+            "type": "string",
+            "description": "Russian summary. Present on only some mentions (6 of 23 on 2026-10-23)."
+          }
+        },
+        "required": [
+          "id",
+          "sourceUrl",
+          "sourceName",
+          "title",
+          "content",
+          "date",
+          "dateFormatted",
+          "title_en",
+          "title_ua",
+          "content_en",
+          "content_ua"
+        ],
+        "additionalProperties": true
+      },
+      "Avatar": {
+        "type": "object",
+        "description": "Map from a Telegram handle (e.g. `@olegtsarov`) or, for private channels, a 16-character invite hash, to the URL of that channel's avatar image (all observed values were `https://lh3.googleusercontent.com/...` URLs). 14,307 entries (~3.3 MB) on 2026-10-23.",
+        "additionalProperties": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "Status": {
+        "type": "object",
+        "description": "Statuses map. The endpoint answered with an empty object `{}` on 2026-10-23, so the key and value types are unknown.",
+        "additionalProperties": {}
+      }
+    }
+  }
+}

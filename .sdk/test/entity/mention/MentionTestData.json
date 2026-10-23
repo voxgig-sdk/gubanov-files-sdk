@@ -1,0 +1,76 @@
+{
+  "existing": {
+    "mention": {
+      "MENTION00": {
+        "content": "s82",
+        "content_en": "s83",
+        "content_ru": "s84",
+        "content_ua": "s85",
+        "date": "s86",
+        "dateFormatted": "s87",
+        "id": "MENTION00",
+        "sourceName": "s89",
+        "sourceUrl": "s8a",
+        "title": "s8b",
+        "title_en": "s8c",
+        "title_ru": "s8d",
+        "title_ua": "s8e"
+      },
+      "MENTION01": {
+        "content": "s104",
+        "content_en": "s105",
+        "content_ru": "s106",
+        "content_ua": "s107",
+        "date": "s108",
+        "dateFormatted": "s109",
+        "id": "MENTION01",
+        "sourceName": "s10b",
+        "sourceUrl": "s10c",
+        "title": "s10d",
+        "title_en": "s10e",
+        "title_ru": "s10f",
+        "title_ua": "s110"
+      },
+      "MENTION02": {
+        "content": "s186",
+        "content_en": "s187",
+        "content_ru": "s188",
+        "content_ua": "s189",
+        "date": "s18a",
+        "dateFormatted": "s18b",
+        "id": "MENTION02",
+        "sourceName": "s18d",
+        "sourceUrl": "s18e",
+        "title": "s18f",
+        "title_en": "s190",
+        "title_ru": "s191",
+        "title_ua": "s192"
+      }
+    }
+  },
+  "new": {
+    "mention": {
+      "mention_ref01": {
+        "content": "s208",
+        "content_en": "s209",
+        "content_ru": "s20a",
+        "content_ua": "s20b",
+        "date": "s20c",
+        "dateFormatted": "s20d",
+        "sourceName": "s20f",
+        "sourceUrl": "s210",
+        "title": "s211",
+        "title_en": "s212",
+        "title_ru": "s213",
+        "title_ua": "s214"
+      }
+    }
+  },
+  "requests": {
+    "GET /mentions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

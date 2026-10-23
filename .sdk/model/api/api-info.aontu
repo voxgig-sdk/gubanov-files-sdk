@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/gubanovfiles"
+      }
+      description: "Unofficial JSON endpoints behind gubanovfiles.com (\"Files of Gubanov\"), a database of bloggers and outlets that published promotional material about the 'SEZ PPT Alabuga' project. Knowledge comes from the community Swift client https://github.com/l0v3m0n3y/gubanovfiles (src/gubanovfiles.swift lists the three routes) and from live GET probes on 2026-10-23; the site publishes no documentation of its own. Response shapes are taken from those probes. Unverified: `/statuses` returned an empty object, so its contents are unknown; no pagination or query parameters were observed on any route. No key is needed."
+      servers: [
+        {
+          description: "Gubanov Files production server"
+          url: "https://gubanovfiles.com/api"
+        }
+      ]
+      summary: "Unofficial JSON endpoints behind gubanovfiles.com (\"Files of Gubanov\"), a database of bloggers and outlets that published promotional material about the 'SEZ PPT Alabuga' project."
+      title: "Gubanov Files API"
+      version: "1.0.0"
+      website: "https://gubanovfiles.com"
+    }
+  }
+}
+

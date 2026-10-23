@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "status": {
+      "STATUS00": {
+        "id": "STATUS00"
+      },
+      "STATUS01": {
+        "id": "STATUS01"
+      },
+      "STATUS02": {
+        "id": "STATUS02"
+      }
+    }
+  },
+  "new": {
+    "status": {
+      "status_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /statuses": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

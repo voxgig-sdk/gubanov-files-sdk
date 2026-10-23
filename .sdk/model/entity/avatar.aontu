@@ -1,0 +1,43 @@
+# Entity: avatar
+
+main: kit: entity: avatar: {
+
+  alias: field: {}
+
+  name: "avatar"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /tg-avatars"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/tg-avatars"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "tg-avatars"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

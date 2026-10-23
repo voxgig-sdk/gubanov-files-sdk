@@ -1,0 +1,21 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "All mentions",
+      "Avatar URL map",
+      "English summary.",
+      "Gubanov Files production server",
+      "Publication date, ISO 8601 at midnight UTC, for example `2026-07-17T00:00:00Z`.",
+      "Russian summary. Present on only some mentions (6 of 23 on 2026-10-23).",
+      "Statuses object",
+      "Summary text in the original language.",
+      "Ukrainian summary.",
+      "Unofficial JSON endpoints behind gubanovfiles.com (&quot;Files of Gubanov&quot;), a database of bloggers and outlets that published promotional material about the &#39;SEZ PPT Alabuga&#39; project. Knowledge comes from the community Swift client https://github.com/l0v3m0n3y/gubanovfiles (src/gubanovfiles.swift lists the three routes) and from live GET probes on 2026-10-23; the site publishes no documentation of its own. Response shapes are taken from those probes. Unverified: `/statuses` returned an empty object, so its contents are unknown; no pagination or query parameters were observed on any route. No key is needed."
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+# Entity: mention
+
+main: kit: entity: mention: {
+
+  alias: field: {}
+
+  fields: {
+    content: {
+      h: "Content"
+      n: "content"
+      r: true
+      sh: "Summary text in the original language."
+      t: "`$STRING`"
+    }
+    content_en: {
+      h: "Content En"
+      n: "content_en"
+      r: true
+      sh: "English summary."
+      t: "`$STRING`"
+    }
+    content_ru: {
+      h: "Content Ru"
+      n: "content_ru"
+      r: false
+      sh: "Russian summary."
+      t: "`$STRING`"
+    }
+    content_ua: {
+      h: "Content Ua"
+      n: "content_ua"
+      r: true
+      sh: "Ukrainian summary."
+      t: "`$STRING`"
+    }
+    date: {
+      fo: "date-time"
+      h: "Date"
+      n: "date"
+      r: true
+      sh: "Publication date, ISO 8601 at midnight UTC, e.g."
+      t: "`$STRING`"
+    }
+    dateFormatted: {
+      h: "Date Formatted"
+      n: "dateFormatted"
+      r: true
+      sh: "The same date as `DD.MM.YYYY`."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Mention id, e.g."
+      t: "`$STRING`"
+    }
+    sourceName: {
+      h: "Source Name"
+      n: "sourceName"
+      r: true
+      sh: "Name of the blogger or outlet (Russian)."
+      t: "`$STRING`"
+    }
+    sourceUrl: {
+      h: "Source Url"
+      n: "sourceUrl"
+      r: true
+      sh: "Link to the original material (YouTube video, Telegram post, article)."
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Title in the original language (usually Russian)."
+      t: "`$STRING`"
+    }
+    title_en: {
+      h: "Title En"
+      n: "title_en"
+      r: true
+      sh: "English title."
+      t: "`$STRING`"
+    }
+    title_ru: {
+      h: "Title Ru"
+      n: "title_ru"
+      r: false
+      sh: "Russian title."
+      t: "`$STRING`"
+    }
+    title_ua: {
+      h: "Title Ua"
+      n: "title_ua"
+      r: true
+      sh: "Ukrainian title."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "mention"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /mentions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/mentions"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "mentions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

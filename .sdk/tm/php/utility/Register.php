@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+// GubanovFiles SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+GubanovFilesUtility::setRegistrar(function (GubanovFilesUtility $u): void {
+    $u->clean = [GubanovFilesClean::class, 'call'];
+    $u->clean_add = [GubanovFilesClean::class, 'add'];
+    $u->clean_explain = [GubanovFilesDone::class, 'clean_explain'];
+    $u->done = [GubanovFilesDone::class, 'call'];
+    $u->make_error = [GubanovFilesMakeError::class, 'call'];
+    $u->feature_add = [GubanovFilesFeatureAdd::class, 'call'];
+    $u->feature_hook = [GubanovFilesFeatureHook::class, 'call'];
+    $u->feature_init = [GubanovFilesFeatureInit::class, 'call'];
+    $u->fetcher = [GubanovFilesFetcher::class, 'call'];
+    $u->make_fetch_def = [GubanovFilesMakeFetchDef::class, 'call'];
+    $u->make_context = [GubanovFilesMakeContext::class, 'call'];
+    $u->make_options = [GubanovFilesMakeOptions::class, 'call'];
+    $u->make_request = [GubanovFilesMakeRequest::class, 'call'];
+    $u->make_response = [GubanovFilesMakeResponse::class, 'call'];
+    $u->make_result = [GubanovFilesMakeResult::class, 'call'];
+    $u->make_point = [GubanovFilesMakePoint::class, 'call'];
+    $u->make_spec = [GubanovFilesMakeSpec::class, 'call'];
+    $u->make_url = [GubanovFilesMakeUrl::class, 'call'];
+    $u->param = [GubanovFilesParam::class, 'call'];
+    $u->prepare_auth = [GubanovFilesPrepareAuth::class, 'call'];
+    $u->prepare_body = [GubanovFilesPrepareBody::class, 'call'];
+    $u->prepare_headers = [GubanovFilesPrepareHeaders::class, 'call'];
+    $u->prepare_method = [GubanovFilesPrepareMethod::class, 'call'];
+    $u->prepare_params = [GubanovFilesPrepareParams::class, 'call'];
+    $u->prepare_path = [GubanovFilesPreparePath::class, 'call'];
+    $u->prepare_query = [GubanovFilesPrepareQuery::class, 'call'];
+    $u->graphql_body = [GubanovFilesGraphql::class, 'body'];
+    $u->graphql_errors = [GubanovFilesGraphql::class, 'errors'];
+    $u->result_basic = [GubanovFilesResultBasic::class, 'call'];
+    $u->result_body = [GubanovFilesResultBody::class, 'call'];
+    $u->result_headers = [GubanovFilesResultHeaders::class, 'call'];
+    $u->transform_request = [GubanovFilesTransformRequest::class, 'call'];
+    $u->transform_response = [GubanovFilesTransformResponse::class, 'call'];
+});

@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "avatar": {
+      "AVATAR00": {
+        "id": "AVATAR00"
+      },
+      "AVATAR01": {
+        "id": "AVATAR01"
+      },
+      "AVATAR02": {
+        "id": "AVATAR02"
+      }
+    }
+  },
+  "new": {
+    "avatar": {
+      "avatar_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /tg-avatars": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
